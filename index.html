@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>個別相談参加者 限定特典ページ｜V-Pro</title>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700,900&display=swap&subset=japanese" rel="stylesheet">
+<style>
+  :root{
+    --cosmic-bg:#0a0823;
+    --cosmic-bg2:#180a3a;
+    --cosmic-deep:#06051a;
+    --neon-cyan:#00e0ff;
+    --neon-cyan-bright:#00f5ff;
+    --neon-violet:#8a2be2;
+    --neon-violet-deep:#5a1ec0;
+    --neon-pink:#ff3a8e;
+    --neon-yellow:#ffe44d;
+    --neon-green:#3aff9e;
+    --red-glow:#ff1a4a;
+    --light-cream:#f6f1ff;
+    --light-cream-text:#2a1a55;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#06051a;color:#fff;font-family:'Noto Sans JP',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{
+    background:
+      radial-gradient(ellipse at 18% 12%,rgba(138,43,226,.22) 0%,transparent 38%),
+      radial-gradient(ellipse at 82% 22%,rgba(0,224,255,.12) 0%,transparent 38%),
+      radial-gradient(ellipse at 50% 70%,rgba(255,58,142,.10) 0%,transparent 42%),
+      linear-gradient(180deg,#06051a 0%,#0a0823 35%,#180a3a 60%,#06051a 100%);
+    background-attachment:fixed;min-height:100vh;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%,#fff 50%,transparent 100%),
+      radial-gradient(1px 1px at 88% 32%,#fff 50%,transparent 100%),
+      radial-gradient(1.2px 1.2px at 24% 64%,#e0d4ff 50%,transparent 100%),
+      radial-gradient(1px 1px at 70% 80%,#fff 50%,transparent 100%),
+      radial-gradient(1px 1px at 92% 88%,#a8b8ff 50%,transparent 100%),
+      radial-gradient(1px 1px at 8% 90%,#fff 50%,transparent 100%),
+      radial-gradient(1px 1px at 56% 12%,#e0d4ff 50%,transparent 100%),
+      radial-gradient(0.8px 0.8px at 40% 44%,#fff 50%,transparent 100%),
+      radial-gradient(0.8px 0.8px at 80% 56%,#fff 50%,transparent 100%),
+      radial-gradient(1px 1px at 32% 28%,#fff 50%,transparent 100%);
+    background-size:680px 920px;
+    opacity:.55;
+  }
+
+  .main{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:0 16px 80px}
+
+  /* === HERO === */
+  .hero{
+    text-align:center;padding:56px 8px 36px;position:relative;
+  }
+  .badge-neon{
+    display:inline-block;padding:6px 18px;
+    border:1.5px solid var(--neon-cyan);color:var(--neon-cyan);
+    font-size:12px;font-weight:900;letter-spacing:.16em;
+    box-shadow:0 0 18px rgba(0,224,255,.5),inset 0 0 12px rgba(0,224,255,.18);
+    text-shadow:0 0 10px rgba(0,224,255,.7);
+    margin-bottom:26px;
+  }
+  .hero-eyebrow{
+    font-size:13px;font-weight:900;color:#fff;letter-spacing:.2em;margin-bottom:14px;
+    text-shadow:0 0 18px rgba(255,255,255,.6);
+  }
+  .hero-title{
+    font-size:38px;font-weight:900;line-height:1.15;letter-spacing:.02em;color:#fff;
+    text-shadow:
+      0 0 22px rgba(0,224,255,.55),
+      0 0 44px rgba(138,43,226,.4),
+      0 0 8px rgba(255,255,255,.25);
+    margin-bottom:16px;
+  }
+  .hero-title .accent-pink{
+    color:var(--neon-pink);
+    text-shadow:
+      0 0 22px rgba(255,58,142,.85),
+      0 0 44px rgba(255,58,142,.45),
+      0 0 8px rgba(255,255,255,.25);
+  }
+  .hero-title .accent-violet{
+    color:var(--neon-violet);
+    text-shadow:
+      0 0 22px rgba(138,43,226,.85),
+      0 0 44px rgba(138,43,226,.5),
+      0 0 8px rgba(255,255,255,.25);
+  }
+  .hero-desc{
+    font-size:15px;color:#dde0ff;font-weight:500;line-height:2;margin-top:24px;
+    max-width:560px;margin-left:auto;margin-right:auto;
+  }
+  .hero-desc strong{color:var(--neon-cyan);font-weight:900;text-shadow:0 0 10px rgba(0,224,255,.55)}
+
+  /* === SECTION === */
+  section{margin:48px 0;position:relative}
+  .section-eyebrow{text-align:center;font-size:12px;color:var(--neon-cyan);letter-spacing:.4em;font-weight:900;margin-bottom:10px;text-transform:uppercase;text-shadow:0 0 10px rgba(0,224,255,.5)}
+  .section-headline{
+    text-align:center;font-size:30px;font-weight:900;line-height:1.3;color:#fff;margin-bottom:30px;
+    text-shadow:0 0 18px rgba(255,255,255,.4);
+  }
+  .section-headline .glow-pink{color:var(--neon-pink);text-shadow:0 0 22px rgba(255,58,142,.7)}
+  .section-headline .glow-violet{color:var(--neon-violet);text-shadow:0 0 22px rgba(138,43,226,.7)}
+
+  /* === NOTICE (top) === */
+  .notice{
+    background:linear-gradient(160deg,rgba(58,20,128,.5),rgba(20,8,68,.65));
+    border:1.5px solid rgba(0,224,255,.4);
+    border-radius:8px;
+    padding:22px 22px;
+    box-shadow:0 0 24px rgba(0,224,255,.18),inset 0 0 18px rgba(138,43,226,.08);
+    margin-bottom:36px;
+  }
+  .notice-title{font-size:14px;font-weight:900;color:var(--neon-cyan);letter-spacing:.1em;margin-bottom:10px;text-shadow:0 0 10px rgba(0,224,255,.55)}
+  .notice-body{font-size:14px;color:#dde0ff;line-height:1.9;font-weight:500}
+  .notice-body strong{color:var(--neon-yellow);font-weight:900;text-shadow:0 0 8px rgba(255,228,77,.55)}
+
+  /* === BONUS CARD === */
+  .bonuses{display:flex;flex-direction:column;gap:24px}
+  .bonus-card{
+    background:linear-gradient(160deg,rgba(58,20,128,.55),rgba(20,8,68,.7));
+    border:2px solid rgba(138,43,226,.55);
+    border-radius:10px;
+    box-shadow:0 0 28px rgba(138,43,226,.35),inset 0 0 18px rgba(138,43,226,.06);
+    padding:30px 24px;
+    position:relative;
+  }
+  .bonus-card::before{
+    content:"";position:absolute;top:-1px;left:-1px;right:-1px;height:3px;
+    background:linear-gradient(90deg,var(--neon-cyan),var(--neon-violet),var(--neon-pink));
+    border-radius:10px 10px 0 0;
+    box-shadow:0 0 14px rgba(0,224,255,.6);
+  }
+  .bonus-num{
+    display:inline-block;background:linear-gradient(110deg,#ff3a8e,#8a2be2);color:#fff;
+    font-weight:900;font-size:12px;padding:5px 16px;border-radius:4px;letter-spacing:.12em;
+    margin-bottom:14px;box-shadow:0 0 14px rgba(255,58,142,.55);
+  }
+  .bonus-eyebrow{font-size:12px;color:#c0b8e0;font-weight:500;margin-bottom:6px;letter-spacing:.04em}
+  .bonus-title{font-size:22px;font-weight:900;color:#fff;line-height:1.4;text-shadow:0 0 12px rgba(0,224,255,.45);margin-bottom:6px}
+  .bonus-title .acc{color:var(--neon-cyan)}
+  .bonus-sub{font-size:12px;color:#a0a0c8;font-weight:500;margin-bottom:18px}
+
+  .bonus-desc{font-size:14px;color:#dde0ff;line-height:2;font-weight:500;margin:14px 0 22px;padding:14px 16px;background:rgba(8,4,28,.45);border-left:3px solid var(--neon-cyan);border-radius:0 6px 6px 0}
+  .bonus-desc strong{color:var(--neon-yellow);font-weight:900;text-shadow:0 0 8px rgba(255,228,77,.45)}
+
+  .file-list{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+  .file-link{
+    display:flex;align-items:center;gap:12px;
+    background:rgba(10,8,35,.7);
+    border:1.5px solid rgba(0,224,255,.45);
+    border-radius:6px;
+    padding:14px 16px;
+    color:#fff;text-decoration:none;
+    transition:all .18s ease;
+    box-shadow:0 0 10px rgba(0,224,255,.15);
+  }
+  .file-link:hover{
+    background:rgba(0,224,255,.10);
+    border-color:var(--neon-cyan);
+    box-shadow:0 0 22px rgba(0,224,255,.5),inset 0 0 12px rgba(0,224,255,.12);
+    transform:translateY(-1px);
+  }
+  .file-link.primary{
+    background:linear-gradient(110deg,rgba(255,58,142,.18),rgba(138,43,226,.22));
+    border:1.5px solid var(--neon-pink);
+    box-shadow:0 0 14px rgba(255,58,142,.35);
+  }
+  .file-link.primary:hover{
+    background:linear-gradient(110deg,rgba(255,58,142,.32),rgba(138,43,226,.38));
+    box-shadow:0 0 26px rgba(255,58,142,.6);
+  }
+  .file-icon{
+    flex-shrink:0;width:38px;height:38px;border-radius:6px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:18px;font-weight:900;color:#fff;
+    background:linear-gradient(135deg,#00e0ff,#5f2bff);
+    box-shadow:0 0 12px rgba(0,224,255,.55);
+  }
+  .file-link.primary .file-icon{background:linear-gradient(135deg,#ff3a8e,#8a2be2);box-shadow:0 0 12px rgba(255,58,142,.6)}
+  .file-icon.doc{background:linear-gradient(135deg,#3aff9e,#00b8b0);box-shadow:0 0 12px rgba(58,255,158,.55)}
+  .file-meta{flex:1;min-width:0}
+  .file-name{font-size:14px;font-weight:900;color:#fff;line-height:1.4;margin-bottom:2px}
+  .file-type{font-size:11px;color:#a8b8d8;font-weight:500;letter-spacing:.04em}
+  .file-arrow{flex-shrink:0;color:var(--neon-cyan);font-size:18px;font-weight:900;text-shadow:0 0 8px rgba(0,224,255,.6)}
+
+  /* === STEPS === */
+  .steps-card{
+    background:linear-gradient(170deg,#f6f1ff 0%,#ece0ff 60%,#e0d0ff 100%);
+    color:var(--light-cream-text);
+    border-radius:10px;padding:34px 26px;
+    box-shadow:0 0 0 2px var(--neon-violet),0 0 32px rgba(138,43,226,.4),inset 0 0 0 1px rgba(255,255,255,.6);
+    position:relative;overflow:hidden;
+  }
+  .steps-title{font-size:18px;font-weight:900;color:var(--neon-violet-deep);text-align:center;margin-bottom:22px;letter-spacing:.04em}
+  .steps{display:flex;flex-direction:column;gap:0;position:relative}
+  .step{display:flex;gap:14px;align-items:flex-start;padding:14px 0;position:relative}
+  .step:not(:last-child)::after{content:"";position:absolute;left:23px;top:54px;bottom:0;width:2px;background:linear-gradient(180deg,#8a2be2,#ff3a8e);opacity:.6}
+  .step-num{
+    flex-shrink:0;width:48px;height:48px;border-radius:6px;
+    background:linear-gradient(135deg,#8a2be2,#ff3a8e);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;line-height:1;
+    box-shadow:0 0 16px rgba(138,43,226,.55);
+  }
+  .step-text{padding-top:10px;font-size:15px;font-weight:700;line-height:1.7;color:var(--light-cream-text)}
+  .step-text strong{color:var(--neon-violet-deep);font-weight:900}
+  .step-text small{display:block;font-size:12px;color:#5a4a8a;font-weight:500;margin-top:3px}
+
+  /* === FOOTER === */
+  .footer{
+    text-align:center;margin-top:60px;padding:30px 16px 0;
+    border-top:1px solid rgba(138,43,226,.3);
+    font-size:12px;color:#8a8ab0;letter-spacing:.06em;
+  }
+  .footer-brand{font-size:13px;font-weight:900;color:#c0b8e0;margin-bottom:6px;letter-spacing:.18em}
+
+  @media (max-width:560px){
+    .hero-title{font-size:28px}
+    .section-headline{font-size:22px}
+    .bonus-title{font-size:18px}
+    .main{padding:0 12px 60px}
+    .bonus-card{padding:24px 18px}
+  }
+
+  /* === PRINT-OPTIMIZED (PDF出力用 軽量化) === */
+  @media print{
+    html,body{background:#0a0823 !important}
+    body{background:linear-gradient(180deg,#06051a 0%,#1a0a3a 100%) !important;background-attachment:scroll !important;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+    body::before{display:none !important}
+    .bonus-card,.notice,.steps-card{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;box-shadow:none !important}
+    .file-link{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;box-shadow:none !important}
+    .bonus-card,.notice{break-inside:avoid;page-break-inside:avoid}
+    .hero{padding-top:30px;padding-bottom:20px}
+    section{margin:24px 0}
+    .main{padding-bottom:30px}
+    .footer{margin-top:30px}
+  }
+</style>
+</head>
+<body>
+<div class="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge-neon">EXCLUSIVE BONUS</div>
+    <div class="hero-eyebrow">AI×動画編集オートパイロットシステム実装会</div>
+    <h1 class="hero-title">
+      個別相談ご参加<br>
+      <span class="accent-pink">ありがとうございました</span>
+    </h1>
+    <p class="hero-desc">
+      ここからは、参加者のあなた専用に<br>
+      <strong>3つのデモ版特典</strong>をお渡しします。<br>
+      下記から各ファイルをダウンロードして、<br>
+      今日からあなたのオートパイロット運用を始めてください。
+    </p>
+  </section>
+
+  <!-- NOTICE -->
+  <div class="notice">
+    <div class="notice-title">▼ 受け取り前に</div>
+    <div class="notice-body">
+      ・本ページは<strong>個別相談ご参加者様限定</strong>です。第三者への共有・転載はお控えください。<br>
+      ・各特典は<strong>体験版（デモ版）</strong>として、機能を一部制限してお渡ししています。<br>
+      ・プラグインのインストール手順は、各「マニュアル」を必ず先にご確認ください。
+    </div>
+  </div>
+
+  <!-- BONUSES -->
+  <section>
+    <div class="section-eyebrow">YOUR BONUSES</div>
+    <h2 class="section-headline"><span class="glow-pink">3つのデモ版</span>を受け取る</h2>
+
+    <div class="bonuses">
+
+      <!-- BONUS 1: SE-Panel -->
+      <div class="bonus-card">
+        <span class="bonus-num">特典 1</span>
+        <div class="bonus-eyebrow">動画編集の音を1クリックで配置</div>
+        <div class="bonus-title"><span class="acc">AI効果音パネル</span> "SE-Panel"</div>
+        <div class="bonus-sub">Premiere Pro プラグイン｜デモ版</div>
+
+        <div class="bonus-desc">
+          SE（効果音）をAIが自動でレコメンド＆1クリック配置するPremiere Pro用パネル。<br>
+          デモ版は<strong>フォルダ分け・案件ごとのプリセット作成が不可</strong>の制限付きですが、コア機能はそのままお試しいただけます。
+        </div>
+
+        <div class="file-list">
+          <a class="file-link primary" href="https://drive.google.com/file/d/1CXoEX_takRo6UboFN8q-cqJNZzpUmoXv/view" target="_blank" rel="noopener">
+            <span class="file-icon">⬇</span>
+            <div class="file-meta">
+              <div class="file-name">SE-Panel-Demo-Panel.zip</div>
+              <div class="file-type">プラグイン本体（ZIP）</div>
+            </div>
+            <span class="file-arrow">→</span>
+          </a>
+          <a class="file-link" href="https://docs.google.com/spreadsheets/d/16Io1WCqkp2sroq8vYxaWsmO9ENCQOnGBn9noUKGE9hs/edit" target="_blank" rel="noopener">
+            <span class="file-icon doc">📖</span>
+            <div class="file-meta">
+              <div class="file-name">SEパネル_デモ版マニュアル</div>
+              <div class="file-type">インストール手順・使い方</div>
+            </div>
+            <span class="file-arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- BONUS 2: AI Cut + AI Telop -->
+      <div class="bonus-card">
+        <span class="bonus-num">特典 2</span>
+        <div class="bonus-eyebrow">カット・テロップを下処理ゼロで</div>
+        <div class="bonus-title"><span class="acc">自動カット ＆ 自動テロップ</span> システム</div>
+        <div class="bonus-sub">Premiere Pro プラグイン 2点セット｜デモ版</div>
+
+        <div class="bonus-desc">
+          ① <strong>AI Cut</strong>：トーク動画の無音・フィラー・言い直しを自動検出してカット<br>
+          ② <strong>AI Telop</strong>：話している言葉を全文文字起こし→整文→テロップSRTを自動生成<br>
+          下処理に消えていた時間を丸ごと圧縮できる、編集ワークフロー革命の中核2本です。
+        </div>
+
+        <div class="file-list">
+          <a class="file-link primary" href="https://drive.google.com/file/d/1Hr73hdj0BX7M1JcN5aiUpROQPffh4r9g/view" target="_blank" rel="noopener">
+            <span class="file-icon">⬇</span>
+            <div class="file-meta">
+              <div class="file-name">AI-Cut-Demo-Panel.zip</div>
+              <div class="file-type">自動カット プラグイン本体（ZIP）</div>
+            </div>
+            <span class="file-arrow">→</span>
+          </a>
+          <a class="file-link" href="https://docs.google.com/spreadsheets/d/1SaWbnWEoaJWMa2QZaik0-Qk2UcbQMCYYZB1USMUkMCM/edit" target="_blank" rel="noopener">
+            <span class="file-icon doc">📖</span>
+            <div class="file-meta">
+              <div class="file-name">カットプラグイン_デモ版マニュアル</div>
+              <div class="file-type">インストール手順・使い方</div>
+            </div>
+            <span class="file-arrow">→</span>
+          </a>
+          <a class="file-link primary" href="https://drive.google.com/file/d/1WMUY4FrxIM7AdcHI6W894UyPnVLvp1Nd/view" target="_blank" rel="noopener">
+            <span class="file-icon">⬇</span>
+            <div class="file-meta">
+              <div class="file-name">AI-Telop-Demo-Panel.zip</div>
+              <div class="file-type">自動テロップ プラグイン本体（ZIP）</div>
+            </div>
+            <span class="file-arrow">→</span>
+          </a>
+          <a class="file-link" href="https://docs.google.com/spreadsheets/d/1mLKxRT7xeSw4lG_lQh6kVajCFVjTop5sSTJ0vz-SL4U/edit" target="_blank" rel="noopener">
+            <span class="file-icon doc">📖</span>
+            <div class="file-meta">
+              <div class="file-name">テロッププラグイン_デモ版マニュアル</div>
+              <div class="file-type">インストール手順・使い方</div>
+            </div>
+            <span class="file-arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- BONUS 3: AI案件自動収集 -->
+      <div class="bonus-card">
+        <span class="bonus-num">特典 3</span>
+        <div class="bonus-eyebrow">高単価案件を毎朝あなたの元へ</div>
+        <div class="bonus-title"><span class="acc">AI案件自動収集</span> システム</div>
+        <div class="bonus-sub">高単価案件サーチ｜体験版</div>
+
+        <div class="bonus-desc">
+          動画編集の案件プラットフォームから、<strong>単価1万円以上の高単価案件だけ</strong>をAIが毎朝自動収集してくれるプロンプト＋運用パッケージ。<br>
+          まずは <strong>「はじめのセットアップ案内」</strong> を必ず最初にお読みください。
+        </div>
+
+        <div class="file-list">
+          <a class="file-link primary" href="https://docs.google.com/document/d/1su6Bw8fRzeuJsCHfkmmwSBeaQF2-GNz43zjkZrBsw0w/edit" target="_blank" rel="noopener">
+            <span class="file-icon">①</span>
+            <div class="file-meta">
+              <div class="file-name">【体験版】はじめのセットアップ案内（必読）</div>
+              <div class="file-type">最初にこれを開いてください</div>
+            </div>
+            <span class="file-arrow">→</span>
+          </a>
+          <a class="file-link" href="https://docs.google.com/document/d/1u0PSXQLXKUEVIjcqi2W8YrvMOXbw5Q5uksLLBoSzfD4/edit" target="_blank" rel="noopener">
+            <span class="file-icon doc">②</span>
+            <div class="file-meta">
+              <div class="file-name">【体験版】高単価案件サーチ_プロンプト（コピペ用）</div>
+              <div class="file-type">そのままコピー＆ペースト</div>
+            </div>
+            <span class="file-arrow">→</span>
+          </a>
+          <a class="file-link" href="https://docs.google.com/document/d/1m2naWu-b-4ASOmC0lMWKZ84eoE9FsA2ZIhZdUx-BByE/edit" target="_blank" rel="noopener">
+            <span class="file-icon doc">③</span>
+            <div class="file-meta">
+              <div class="file-name">【体験版】高単価案件サーチ_使い方マニュアル</div>
+              <div class="file-type">運用フロー・チューニング</div>
+            </div>
+            <span class="file-arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SETUP STEPS -->
+  <section>
+    <div class="section-eyebrow">SETUP FLOW</div>
+    <h2 class="section-headline">受け取り後の<span class="glow-violet">進め方</span></h2>
+
+    <div class="steps-card">
+      <div class="steps-title">この順番で進めるのが最短です</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <strong>特典3 → ①「はじめのセットアップ案内」を最初に開く</strong>
+            <small>3分で読めます。ここで全体像と必要環境を把握してください。</small>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <strong>特典1・2 のプラグインをインストール</strong>
+            <small>各マニュアルの手順どおりに、Premiere Proにパネルを追加します。</small>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <strong>特典3のプロンプトを動かして、案件を収集</strong>
+            <small>翌朝にはあなたのリストアップが自動で回り始めます。</small>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-text">
+            <strong>不明点はLINEサポートへ</strong>
+            <small>個別相談から3ヶ月間、LINEでセットアップ支援を受け付けています。</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-brand">V-Pro ／ 個別相談特典</div>
+    AI×動画編集オートパイロットシステム実装会<br>
+    © V-Pro. このページは個別相談参加者限定です。
+  </div>
+
+</div>
+</body>
+</html>
